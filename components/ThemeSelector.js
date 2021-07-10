@@ -2,18 +2,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
- const ThemeSelector = ()=> {
+ const ThemeSelector = ({navigation})=> {
   return (
     <View style={styles.container}>
       <Text>Choose a theme</Text>
       <Button 
         title="Create a Theme" 
         color="green"
-        onPress={() => Alert.alert(' Are you sure you want to create a theme?')}  />
+        onPress={() => navigation.navigate('Create Theme')}  />
       <Button 
         title="Load More" 
         color="red" 
-        onPress={() => Alert.alert('Loading more themes')} />
+        onPress={() => navigation.navigate('Game Play')} />
       
     </View>
   );

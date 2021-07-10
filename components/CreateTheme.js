@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 //add inputs
- const CreateTheme = ()=> {
+ const CreateTheme = ({navigation})=> {
   return (
     <View style={styles.container}>
       <Text>Create a theme</Text> 
      
-      <Button 
+       <Button 
         title="Add image camera" 
         color="blue" 
-        onPress={() => Alert.alert(' add images from camera')} />
+        onPress={() => navigation.navigate('Camera')} />
         <Button 
         title="Add image gallery" 
         color="gray" 

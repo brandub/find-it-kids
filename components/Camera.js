@@ -10,9 +10,6 @@ import { StyleSheet, Text, View, Button, Alert, Image, ScrollView } from 'react-
         flexDirection: "row",
         marginTop: 20,
       }]}>
-      <Image source={require('./images/bat.png')} />
-      <Image source={require('./images/skull.png')} />
-      <Image source={require('./images/witch.png')} />
       
     
       </View>

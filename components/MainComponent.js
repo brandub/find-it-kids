@@ -7,17 +7,13 @@ import CreateTheme from './CreateTheme';
 import Camera from './Camera';
 
 
- const Main = ()=> {
+ const Main = ({navigation})=> {
   return (
     <View style={styles.container}>
       <Text>Find it Kids!</Text>
       <Text>A scavenger hunt for kids</Text>
       <Button title="Start" color="purple"
-      onPress={() => Alert.alert(' Are you sure you want to start game?')}  />
-      <ThemeSelector />
-      <GamePlayGrid />
-      <CreateTheme />
-      <Camera />
+      onPress={() => navigation.navigate('Theme')}  />
       <StatusBar style="auto" />
     </View>
   );
