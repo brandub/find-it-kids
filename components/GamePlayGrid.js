@@ -1,30 +1,48 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, Alert, Image } from 'react-native';
+import React, {useState } from 'react';
+import { StyleSheet, FlatList, View, Button, Alert, Image, SafeAreaView } from 'react-native';
+import {IMAGES} from '../shared/imagesObj';
+
 
  const GamePlayGrid = ()=> {
+  const [images, setImages] = useState(IMAGES);
+  const renderItem = ({ item }) => (
+    <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              margin: 1
+            }}>
+      <Image
+              style={styles.imageThumbnail}
+              source={{
+                uri: item.src,
+              }}
+            />
+            </View>
+  );
+  
   return (
-    <View style={styles.container}>
+    
       
-      <View style={styles.grid}>
-        <Image source={require('./images/bat.png')} />
-        <Image source={require('./images/skull.png')} />
-        <Image source={require('./images/witch.png')} />
-        <Image source={require('./images/bat.png')} />
-        <Image source={require('./images/skull.png')} />
-        <Image source={require('./images/witch.png')} />
-        <Image source={require('./images/bat.png')} />
-        <Image source={require('./images/skull.png')} />
-        <Image source={require('./images/witch.png')} />
-        <Image source={require('./images/bat.png')} />
-        <Image source={require('./images/skull.png')} />
-        <Image source={require('./images/witch.png')} />
-      </View>
+      <SafeAreaView>
+    
+      <FlatList
+        data={images}
+        renderItem={renderItem}
+        //Setting the number of column
+        numColumns={3}
+        keyExtractor={item => item.id}
+      />
+     
       <Button 
         title="Reset game" 
         color="blue" 
         onPress={() => Alert.alert(' Are you sure you want to reset game')} />
+    
+ 
+    </SafeAreaView>
       
-    </View>
+    
   );
 }
 
@@ -43,6 +61,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  imageThumbnail: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 100,
   },
   
 });
