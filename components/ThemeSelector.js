@@ -24,7 +24,7 @@ import {IMAGES} from '../shared/imagesObj';
               margin: 1
             }}>
       <Button
-  onPress={() => navigation.navigate('Game Play')}
+  onPress={() => navigation.navigate('Game Play', { themeId: item })}
   title={item}
   color="#841584"
   accessibilityLabel="Learn more about this purple button"
@@ -43,6 +43,7 @@ import {IMAGES} from '../shared/imagesObj';
         //Setting the number of column
         numColumns={3}
         keyExtractor={(item, index) => item.key}
+        onPress={() => navigation.navigate('Create Theme')}
       />
      
       <Button 

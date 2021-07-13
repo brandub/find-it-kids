@@ -3,8 +3,13 @@ import { StyleSheet, FlatList, View, Button, Alert, Image, SafeAreaView } from '
 import {IMAGES} from '../shared/imagesObj';
 
 
- const GamePlayGrid = ()=> {
+ const GamePlayGrid = ({route, navigation})=> {
   const [images, setImages] = useState(IMAGES);
+
+  const themeId = route.params.themeId;
+  const theme = images.filter(theme => [...theme.themeTag].includes(themeId))
+  console.log(theme)
+
   const renderItem = ({ item }) => (
     <View
             style={{
@@ -27,7 +32,7 @@ import {IMAGES} from '../shared/imagesObj';
       <SafeAreaView>
     
       <FlatList
-        data={images}
+        data={theme}
         renderItem={renderItem}
         //Setting the number of column
         numColumns={3}
