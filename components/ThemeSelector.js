@@ -51,10 +51,6 @@ import {IMAGES} from '../shared/imagesObj';
         title="Create a Theme" 
         color="green"
         onPress={() => navigation.navigate('Create Theme')}  />
-      <Button 
-        title="Load Game" 
-        color="red" 
-        onPress={() => navigation.navigate('Game Play')} />
       
     
     </SafeAreaView>

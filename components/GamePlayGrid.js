@@ -1,5 +1,6 @@
 import React, {useState } from 'react';
-import { StyleSheet, FlatList, View, Button, Alert, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, View, Button, Alert, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+
 import {IMAGES} from '../shared/imagesObj';
 
 
@@ -17,12 +18,16 @@ import {IMAGES} from '../shared/imagesObj';
               flexDirection: 'column',
               margin: 1
             }}>
+    <TouchableOpacity 
+    onPress={() => Alert.alert('image clicked')}>     
       <Image
               style={styles.imageThumbnail}
               source={{
                 uri: item.src,
               }}
             />
+            </TouchableOpacity> 
+            
             </View>
   );
   
@@ -71,6 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 100,
+    
   },
   
 });
