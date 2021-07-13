@@ -16,7 +16,8 @@ import {IMAGES} from '../shared/imagesObj';
             style={{
               flex: 1,
               flexDirection: 'column',
-              margin: 1
+              margin: 5
+            
             }}>
     <TouchableOpacity 
     onPress={() => Alert.alert('image clicked')}>     
@@ -34,7 +35,7 @@ import {IMAGES} from '../shared/imagesObj';
   return (
     
       
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
     
       <FlatList
         data={theme}
@@ -44,14 +45,15 @@ import {IMAGES} from '../shared/imagesObj';
         keyExtractor={item => item.id}
       />
      
-      <Button 
-        title="Reset game" 
-        color="blue" 
-        onPress={() => Alert.alert(' Are you sure you want to reset game')} />
+     <Button 
+     style={styles.fixToText}
+      title="Reset game" 
+      color="purple" 
+      onPress={() => Alert.alert(' Are you sure you want to reset game')}/>
     
  
     </SafeAreaView>
-      
+     
     
   );
 }
@@ -59,10 +61,8 @@ import {IMAGES} from '../shared/imagesObj';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
-    margin: 20,
+    
   },
   grid: {
     flex: 1,
@@ -77,7 +77,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 100,
     
+    
   },
+  
+  
+
   
 });
 
