@@ -17,6 +17,7 @@ import {IMAGES} from '../shared/imagesObj';
   
 
   const renderTheme = ({ item }) => (
+    
     <View
             style={{
               flex: 1,
@@ -27,7 +28,7 @@ import {IMAGES} from '../shared/imagesObj';
   onPress={() => navigation.navigate('Game Play', { themeId: item })}
   title={item}
   color="#841584"
-  accessibilityLabel="Learn more about this purple button"
+  accessibilityLabel="Selects the theme and loads the game."
 />
             </View>
   );
@@ -42,8 +43,8 @@ import {IMAGES} from '../shared/imagesObj';
         renderItem={renderTheme}
         //Setting the number of column
         numColumns={3}
-        keyExtractor={(item, index) => item.key}
-        onPress={() => navigation.navigate('Create Theme')}
+        keyExtractor={(item) => item.key}
+        
       />
      
       <Button 

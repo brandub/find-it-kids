@@ -1,19 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import ImageGrabber from './ImageGrabber';
+import Camera from './Camera';
 //add inputs
  const CreateTheme = ({navigation})=> {
   return (
     <View style={styles.container}>
-      <Text>Create a theme</Text> 
-     
-       <Button 
-        title="Add image camera" 
-        color="blue" 
-        onPress={() => navigation.navigate('Camera')} />
-        <Button 
-        title="Add image gallery" 
-        color="gray" 
-        onPress={() => Alert.alert(' add images from gallery')} />
+      
+     <View  style={styles.container}>
+     <Camera />
+     </View>
+       <View  style={styles.container}>
+       <ImageGrabber />
+       </View>
       
     </View>
   );
@@ -22,9 +21,12 @@ import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "row",
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
+    padding: 10
+
   },
   
 });
