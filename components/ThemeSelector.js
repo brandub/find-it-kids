@@ -22,7 +22,7 @@ import {IMAGES} from '../shared/imagesObj';
             style={{
               flex: 1,
               flexDirection: 'column',
-              margin: 1
+              margin: 2
             }}>
       <Button
   onPress={() => navigation.navigate('Game Play', { themeId: item })}
@@ -36,7 +36,7 @@ import {IMAGES} from '../shared/imagesObj';
   return (
     
       
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
     
       <FlatList
         data={noDuplicateThemeArray}
@@ -63,9 +63,9 @@ import {IMAGES} from '../shared/imagesObj';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    margin:10,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    
     justifyContent: 'center',
   },
   

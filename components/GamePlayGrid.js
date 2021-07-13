@@ -44,7 +44,8 @@ import {IMAGES} from '../shared/imagesObj';
         numColumns={3}
         keyExtractor={item => item.id}
       />
-     
+     <Button title="Change Theme" color="orange"
+      onPress={() => navigation.navigate('Theme')}  />
      <Button 
      style={styles.fixToText}
       title="Reset game" 
@@ -78,7 +79,14 @@ const styles = StyleSheet.create({
     height: 100,
     
     
+    
   },
+  
+    
+    
+    
+    
+  
   
   
 
