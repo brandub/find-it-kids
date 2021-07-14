@@ -6,10 +6,13 @@ import {IMAGES} from '../shared/imagesObj';
 
  const GamePlayGrid = ({route, navigation})=> {
   const [images, setImages] = useState(IMAGES);
+  const [toggleImg, setToggleImg] = useState(1);
+
+  
 
   const themeId = route.params.themeId;
   const theme = images.filter(theme => [...theme.themeTag].includes(themeId))
-  console.log(theme)
+  
 
   const renderItem = ({ item }) => (
     <View
@@ -19,10 +22,14 @@ import {IMAGES} from '../shared/imagesObj';
               margin: 5
             
             }}>
-    <TouchableOpacity 
-    onPress={() => Alert.alert('image clicked')}>     
-      <Image
-              style={styles.imageThumbnail}
+    <TouchableOpacity style={{  opacity: toggleImg, 
+              alignItems: 'center'}}
+    onPress={() => setToggleImg(.2)}
+      onLongPress={() => setToggleImg(1)}>
+      
+
+      <Image style={{width: 100, height: 100, justifyContent: 'center',
+              alignItems: 'center'}}
               source={{
                 uri: item.src,
               }}
@@ -73,23 +80,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  imageThumbnail: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 100,
     
-    
-    
-  },
-  
-    
-    
-    
-    
-  
-  
-  
-
   
 });
 
