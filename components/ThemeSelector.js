@@ -1,13 +1,23 @@
 
-import React, {useState } from 'react';
+import React, {useState, useEffect } from 'react';
 import { StyleSheet, FlatList, View, Button, Alert, Image, Text, SafeAreaView } from 'react-native';
-import {IMAGES} from '../shared/imagesObj';
+import { baseUrl } from '../shared/baseUrl'
 
- const ThemeSelector = ({navigation})=> {
-  const [images, setImages] = useState(IMAGES);
+
+ const ThemeSelector = ({navigation}) => {
+  const [images, setImages] = useState([]);
   
+  // i was getting data from a dummy source but not my server
+  useEffect(() => {
+	fetch(baseUrl + 'images')
+			.then((response) => response.json())
+			.then((data) => {
+				setImages(data) // new
+			})
+	}, [])
 
-  const createThemeArray = images.flatMap(thm => thm.themeTag )
+console.log(images)
+  const createThemeArray = images.map(thm => thm.themeTag )
    
   
   const noDuplicateThemeArray = [...new Set(createThemeArray)]
@@ -41,7 +51,7 @@ import {IMAGES} from '../shared/imagesObj';
       <FlatList
         data={noDuplicateThemeArray}
         renderItem={renderTheme}
-        //Setting the number of column
+        //Setting the number of columns
         numColumns={3}
         keyExtractor={(item) => item.key}
         

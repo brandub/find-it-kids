@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import ThemeSelector from './ThemeSelector';
+
 import GamePlayGrid from './GamePlayGrid';
 import CreateTheme from './CreateTheme';
 import Camera from './Camera';
+
+
 
 
  const Main = ({navigation})=> {

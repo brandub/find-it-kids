@@ -15,7 +15,10 @@ import Camera from './components/Camera';
 
 const Stack = createStackNavigator();
 
+
+
 function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
