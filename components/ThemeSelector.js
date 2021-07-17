@@ -7,7 +7,7 @@ import { baseUrl } from '../shared/baseUrl'
  const ThemeSelector = ({navigation}) => {
   const [images, setImages] = useState([]);
   
-  // i was getting data from a dummy source but not my server
+  
   useEffect(() => {
 	fetch(baseUrl + 'images')
 			.then((response) => response.json())
@@ -17,7 +17,7 @@ import { baseUrl } from '../shared/baseUrl'
 	}, [])
 
 console.log(images)
-  const createThemeArray = images.map(thm => thm.themeTag )
+  const createThemeArray = images.flatMap(thm => thm.themeTag )
    
   
   const noDuplicateThemeArray = [...new Set(createThemeArray)]

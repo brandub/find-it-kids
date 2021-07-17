@@ -1,18 +1,27 @@
-import React, {useState } from 'react';
+import React, {useState, useEffect } from 'react';
 import { StyleSheet, FlatList, View, Button, Alert, Image, SafeAreaView, TouchableOpacity} from 'react-native';
+import { baseUrl } from '../shared/baseUrl'
 
-import {IMAGES} from '../shared/imagesObj';
 
 
  const GamePlayGrid = ({route, navigation})=> {
-  const [images, setImages] = useState(IMAGES);
   const [toggleImg, setToggleImg] = useState(1);
+  const [images, setImages] = useState([]);
+  
+  
+  useEffect(() => {
+	fetch(baseUrl + 'images')
+			.then((response) => response.json())
+			.then((data) => {
+				setImages(data) // new
+			})
+	}, [])
 
   
 
   const themeId = route.params.themeId;
   const theme = images.filter(theme => [...theme.themeTag].includes(themeId))
-  
+  console.log(theme)
 
   const renderItem = ({ item }) => (
     <View
@@ -31,7 +40,7 @@ import {IMAGES} from '../shared/imagesObj';
       <Image style={{width: 100, height: 100, justifyContent: 'center',
               alignItems: 'center'}}
               source={{
-                uri: item.src,
+                uri: baseUrl + item.src,
               }}
             />
             </TouchableOpacity> 
