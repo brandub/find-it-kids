@@ -14,6 +14,9 @@ import { baseUrl } from '../shared/baseUrl'
 			.then((data) => {
 				setImages(data) // new
 			})
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 	}, [])
 
 console.log(images)
@@ -30,11 +33,17 @@ console.log(images)
     
     <View
             style={{
-              flex: 1,
+              
               flexDirection: 'column',
-              margin: 2
+              margin: 4,
+              flexWrap: "wrap",
+              
+              
+              
             }}>
+       
       <Button
+      
   onPress={() => navigation.navigate('Game Play', { themeId: item })}
   title={item}
   color="#841584"
@@ -53,14 +62,15 @@ console.log(images)
         renderItem={renderTheme}
         //Setting the number of columns
         numColumns={3}
-        keyExtractor={(item) => item.key}
+        keyExtractor={(item, index) => index}
         
       />
      
       <Button 
         title="Create a Theme" 
         color="green"
-        onPress={() => navigation.navigate('Create Theme')}  />
+        onPress={() => navigation.navigate('Create Theme')} 
+        />
       
     
     </SafeAreaView>
@@ -73,10 +83,14 @@ console.log(images)
 
 const styles = StyleSheet.create({
   container: {
-    margin:10,
-    backgroundColor: '#fff',
+    margin: 20,
+    
     
     justifyContent: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    marginVertical: 8,
   },
   
 });

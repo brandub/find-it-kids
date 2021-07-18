@@ -2724,6 +2724,13 @@ expo-font@~9.2.1:
     expo-modules-core "~0.2.0"
     fontfaceobserver "^2.1.0"
 
+expo-image-manipulator@~9.2.2:
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/expo-image-manipulator/-/expo-image-manipulator-9.2.2.tgz#0fc7d2032972961c0a5fb49511d230fe0788fa6f"
+  integrity sha512-rnwUpLmySEhclES+632/vl4cBQyjWE16PdR003WxvN/YBynTlYIi7If2FZRFt5lktX0Rz988XVE89EavHPn2ug==
+  dependencies:
+    expo-modules-core "~0.2.0"
+
 expo-image-picker@~10.2.2:
   version "10.2.2"
   resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-10.2.2.tgz#7501a13306029f672a165f53545ee5dc5f5dc009"
@@ -2738,6 +2745,14 @@ expo-keep-awake@~9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
   integrity sha512-R5jAx5j3MqrhKFB307FBpaHtYSYeVIFX/rVforBF5inKonYjXRWVhjGoBjolF4geAryNamC3NKhMfxyaaB0W6Q==
+
+expo-media-library@~12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-12.1.2.tgz#7a152f5ddf9e5e55d07aa28c8a5bd04113c0ebd2"
+  integrity sha512-e2Wh3TD4N2JjmKFFiQ453QgWWARNqc1/vILkEVnxjs34uJmUoT4a89wromr6Xl2fZJUvJDmgmVmL+A9iBWFgaA==
+  dependencies:
+    "@expo/config-plugins" "^3.0.0"
+    expo-modules-core "~0.2.0"
 
 expo-modules-autolinking@^0.0.2:
   version "0.0.2"

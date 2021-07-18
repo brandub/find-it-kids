@@ -15,6 +15,9 @@ import { baseUrl } from '../shared/baseUrl'
 			.then((data) => {
 				setImages(data) // new
 			})
+      .catch((error) => {
+        console.error('Error:', error);
+      });
 	}, [])
 
   
