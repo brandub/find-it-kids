@@ -43,7 +43,7 @@ import { baseUrl } from '../shared/baseUrl'
       <Image style={{width: 100, height: 100, justifyContent: 'center',
               alignItems: 'center'}}
               source={{
-                uri: baseUrl + item.src,
+                uri: item.src,
               }}
             />
             </TouchableOpacity> 

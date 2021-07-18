@@ -61,14 +61,16 @@ export default function Camera() {
 
   
     if (!result.cancelled) {
-      
-      
+      processImage(result.uri)
       const cachedAsset = await MediaLibrary.createAssetAsync(result.uri);
+      
+      console.log(cachedAsset)
       
       const albumName = "findit";
       const album = await MediaLibrary.getAlbumAsync(albumName)
       
       if(album){
+        
         await MediaLibrary.addAssetsToAlbumAsync([cachedAsset], album, false);
       }else{
         const asset = await MediaLibrary.createAssetAsync(result.uri);
@@ -76,10 +78,10 @@ export default function Camera() {
       }
     
 
-      const obj = {id: image.length, src: result.uri, themeTag:["Cat"]
+      const obj = {id: image.length, src: result.uri, themeTag:["CatDOG"]
       };
       const newArr =[...image, obj]; 
-      setImage(newArr);
+      
       setImageTest(newArr[image.length].src);
       return fetch(baseUrl + 'images', {
         method: "POST",
